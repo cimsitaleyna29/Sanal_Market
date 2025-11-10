@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 class CategoryBase(BaseModel):
     name:str
-    descripton: Optional[str] = None
+    description: Optional[str] = None
     image_url: Optional[str] = None
 
 class CategoryCreate(CategoryBase):
@@ -44,7 +44,7 @@ class ProductCreate(ProductBase):
 class ProductResponse(ProductBase):
     id:int
     created_at: datetime
-    update_at:datetime
+    updated_at: datetime
 
     class Config:
         orm_mode = True

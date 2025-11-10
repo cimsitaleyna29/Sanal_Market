@@ -18,6 +18,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Router'ları dahil et (endpointler)
+app.include_router(categories.router)
+app.include_router(products.router)
+
+
 @app.get("/")
 def home():
     return {"message": "Sanal Market API çalışıyor 🚀"}

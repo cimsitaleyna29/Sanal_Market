@@ -16,6 +16,20 @@ def create_category(db:Session, category:schemas.CategoryCreate):
     db.refresh(db_category)
     return db_category
 
+def update_category(db: Session, category_id: int, updated_data: schemas.CategoryCreate):
+    """kategori güncelleme işlemi"""
+    category = db.query(models.Category).filter(models.Category.id == category_id).first()
+    if not category:
+        return None
+    
+    for key, value in updated_data.model_dump().items():
+        setattr(category,key, value)
+
+    db.commit()
+    db.refresh(category)
+    return category
+
+
 
 def delete_category(db:Session, category_id: int):
     """Kategori ID'ye göre silinir."""
@@ -39,6 +53,20 @@ def create_product(db:Session, product: schemas.ProductCreate):
     db.commit()
     db.refresh(db_product)
     return db_product
+
+def update_product(db: Session, product_id: int, updated_data: schemas.ProductCreate):
+    """Ürün güncelleme işlemi"""
+    product = db.query(models.Product).filter(models.Product.id == product_id).first()
+    if not product:
+        return None
+    
+    for key, value in updated_data.model_dump().items():
+        setattr(product, key, value)
+
+    db.commit()
+    db.refresh(product)
+    return product
+
 
 def delete_product(db:Session, product_id: int):
     """Ürünü ID'ye göre siler."""
