@@ -78,6 +78,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  overflow-y: auto;
 }
 
 .sidebar__link {
@@ -85,7 +86,15 @@ a {
   border-radius: 12px;
   color: #e5e7eb;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar__link-icon {
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .sidebar__link--active {
@@ -110,6 +119,11 @@ a {
   background: #fff;
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
 .header__eyebrow {
   margin: 0;
   color: #6c7a89;
@@ -124,6 +138,22 @@ a {
 .header__status {
   font-size: 0.9rem;
   color: #6c7a89;
+}
+
+.header__logout {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.header__logout:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.18);
+}
+
+.placeholder__text {
+  margin: 0;
+  font-size: 1rem;
+  color: #4b5563;
 }
 
 .app-content {

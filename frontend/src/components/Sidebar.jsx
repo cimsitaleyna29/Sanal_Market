@@ -1,9 +1,14 @@
 import { NavLink } from 'react-router-dom'
 
 const links = [
-  { to: '/kategori-ekle', label: '📁 Kategori Ekle' },
-  { to: '/urun-ekle', label: '🛒 Ürün Ekle' },
-  { to: '/urun-listesi', label: '📋 Ürün Listesi' },
+  { to: '/kategori-ekle', label: 'Kategori Ekle', icon: '📁' },
+  { to: '/urun-ekle', label: 'Ürün Ekle', icon: '🛒' },
+  { to: '/urun-listesi', label: 'Ürün Listesi', icon: '📋' },
+  { to: '/siparis-yonetimi', label: 'Sipariş Yönetimi', icon: '📦' },
+  { to: '/odeme-fatura-yonetimi', label: 'Ödeme / Fatura Yönetimi', icon: '💳' },
+  { to: '/kullanici-yonetimi', label: 'Kullanıcı Yönetimi', icon: '👤' },
+  { to: '/kupon-kampanya-yonetimi', label: 'Kupon / Kampanya Yönetimi', icon: '🎟️' },
+  { to: '/istatistikler', label: 'İstatistikler (Dashboard)', icon: '📊' },
 ]
 
 function Sidebar() {
@@ -26,7 +31,10 @@ function Sidebar() {
               `sidebar__link ${isActive ? 'sidebar__link--active' : ''}`
             }
           >
-            {link.label}
+            <span className="sidebar__link-icon" aria-hidden="true">
+              {link.icon}
+            </span>
+            <span>{link.label}</span>
           </NavLink>
         ))}
       </nav>
