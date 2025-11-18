@@ -139,7 +139,6 @@ function CategoryAdd() {
     <section className="card">
       <header className="card__header">
         <div>
-          <p className="card__eyebrow">Kategoriler</p>
           <h2>Kategori Ekle</h2>
         </div>
         <button className="button button--ghost" type="button" onClick={toggleList}>

@@ -1,17 +1,11 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const pageTitles = {
-  '/kategori-ekle': 'Kategori Ekle',
-  '/urun-ekle': 'Ürün Ekle',
+  '/kategori-ekle': 'Kategori Yönetimi',
+  '/urun-ekle': 'Ürün Yönetimi',
   '/urun-listesi': 'Ürün Listesi',
-  '/siparis-yonetimi': 'Sipariş Yönetimi',
-  '/odeme-fatura-yonetimi': 'Ödeme / Fatura Yönetimi',
-  '/teslimat-kargo-yonetimi': 'Teslimat / Kargo Yönetimi',
   '/kullanici-yonetimi': 'Kullanıcı Yönetimi',
-  '/kupon-kampanya-yonetimi': 'Kupon / Kampanya Yönetimi',
-  '/istatistikler': 'İstatistikler (Dashboard)',
-  '/magaza-ayarlari': 'Mağaza Ayarları',
-  '/musteri-mesajlari': 'Müşteri Mesajları / Geri Bildirimler',
+  '/istatistikler': 'Genel İstatistikler',
 }
 
 function Header() {

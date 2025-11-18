@@ -1,13 +1,11 @@
 import { NavLink } from 'react-router-dom'
+import logoImage from '../assets/sanal-market-logo.svg'
 
 const links = [
-  { to: '/kategori-ekle', label: 'Kategori Ekle', icon: '📁' },
-  { to: '/urun-ekle', label: 'Ürün Ekle', icon: '🛒' },
+  { to: '/kategori-ekle', label: 'Kategori Yönetimi', icon: '📁' },
+  { to: '/urun-ekle', label: 'Ürün Yönetimi', icon: '🛒' },
   { to: '/urun-listesi', label: 'Ürün Listesi', icon: '📋' },
-  { to: '/siparis-yonetimi', label: 'Sipariş Yönetimi', icon: '📦' },
-  { to: '/odeme-fatura-yonetimi', label: 'Ödeme / Fatura Yönetimi', icon: '💳' },
   { to: '/kullanici-yonetimi', label: 'Kullanıcı Yönetimi', icon: '👤' },
-  { to: '/kupon-kampanya-yonetimi', label: 'Kupon / Kampanya Yönetimi', icon: '🎟️' },
   { to: '/istatistikler', label: 'İstatistikler (Dashboard)', icon: '📊' },
 ]
 
@@ -15,7 +13,7 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar__brand">
-        <span className="sidebar__logo">SM</span>
+        <img className="sidebar__logo" src={logoImage} alt="Sanal Market" />
         <div>
           <p className="sidebar__eyebrow">Sanal Market</p>
           <p className="sidebar__title">Yönetim Paneli</p>

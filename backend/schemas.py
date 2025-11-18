@@ -1,16 +1,66 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel
 
-# KATEGORİ SCHEMAS
+from pydantic import BaseModel, EmailStr
+
+
+class UserBase(BaseModel):
+    name: str
+    surname: str
+    email: EmailStr
+    phone: str | None = None
+
+
+class UserCreate(UserBase):
+    password: str
+
+
+class UserUpdate(UserBase):
+    role: str | None = None
+    is_active: bool | None = None
+    password: str | None = None
+
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+
+class UserDetailsBase(BaseModel):
+    salary: float | None = None
+
+
+class UserDetailsResponse(UserDetailsBase):
+    id: int
+    user_id: int
+
+    class Config:
+        orm_mode = True
+
+
+class SalaryUpdate(BaseModel):
+    salary: float
+
+
+class UserResponse(UserBase):
+    id: int
+    role: str
+    is_active: bool
+    details: UserDetailsResponse | None = None
+
+    class Config:
+        orm_mode = True
+
 
 class CategoryBase(BaseModel):
-    name:str
+    name: str
     description: Optional[str] = None
     image_url: Optional[str] = None
 
+
 class CategoryCreate(CategoryBase):
     pass
+
 
 class CategoryResponse(CategoryBase):
     id: int
@@ -19,8 +69,6 @@ class CategoryResponse(CategoryBase):
         orm_mode = True
 
 
-
-# ÜRÜN SCHEMAS
 class ProductBase(BaseModel):
     name: str
     brand: Optional[str] = None
@@ -41,10 +89,16 @@ class ProductBase(BaseModel):
 class ProductCreate(ProductBase):
     pass
 
+
 class ProductResponse(ProductBase):
-    id:int
+    id: int
     created_at: datetime
     updated_at: datetime
 
     class Config:
         orm_mode = True
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"

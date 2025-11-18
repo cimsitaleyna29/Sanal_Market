@@ -1,0 +1,20 @@
+<svg width="320" height="140" viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f4f4f4"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="140" rx="28" fill="#147d8a"/>
+  <text x="32" y="70" font-family="Segoe UI, 'Nunito Sans', Arial, sans-serif" font-size="46" fill="#ffffff" font-weight="600">
+    Sanal
+  </text>
+  <text x="32" y="112" font-family="Segoe UI, 'Nunito Sans', Arial, sans-serif" font-size="46" fill="#ffffff" font-weight="600">
+    Market
+  </text>
+  <g transform="translate(200 28)" fill="url(#cartGradient)">
+    <path d="M0 10c0-2.761 2.239-5 5-5h23.5c2.282 0 4.274 1.529 4.861 3.74l10.17 38.76H80c2.761 0 5 2.239 5 5v2c0 2.761-2.239 5-5 5H38.182a5 5 0 0 1-4.861-3.74L23.15 17H5c-2.761 0-5-2.239-5-5z"/>
+    <circle cx="26" cy="82" r="11" />
+    <circle cx="72" cy="82" r="11" />
+  </g>
+</svg>
